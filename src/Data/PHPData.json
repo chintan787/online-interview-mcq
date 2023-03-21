@@ -1,0 +1,324 @@
+[
+    {
+        "id":"1",
+        "question":"What is PHP?",
+        "options":[
+            "PHP is an open-source programming language",
+            "PHP is used to develop dynamic and interactive websites",
+            "PHP is a server-side scripting language",
+            "All of the mentioned"
+        ],
+        
+        "ans":"3",
+        "ans_desc":"All of the mentioned"
+    },
+    {
+        "id":"2",
+        "question":"What does PHP stand for?",
+        "options":[
+            "PHP stands for Preprocessor Home Page",
+            "PHP stands for Pretext Hypertext Processor",
+            "PHP stands for Hypertext Preprocessor",
+            "PHP stands for Personal Hyper Processor"
+        ],
+        "ans":"2",
+        "ans_desc":"PHP stands for Hypertext Preprocessor"
+    },
+    {
+        "id":"3",
+        "question":"Which of the following is the correct syntax to write a PHP code?",
+        "options":[
+            "<?php ?>",
+            "< php >",
+            "< ? php ?>",
+            "<? ?>"
+        ],
+        "ans":"3",
+        "ans_desc":"<? ?>"
+
+    },
+    {
+        "id":"4",
+        "question":"Which of the following is the correct way to add a comment in PHP code?",
+        "options":[
+            "#",
+            "//",
+            "/* */",
+            "All of the mentioned"
+        ],
+        "ans":"3",
+        "ans_desc":"All of the mentioned"
+
+    },
+    {
+        "id":"5",
+        "question":"Which of the following is used to display the output in PHP?",
+        "options":["echo", "write", "print", "Both (a) and (c)"],
+        "ans":"3",
+        "ans_desc":"Both (a) and (c)"
+    },
+    {
+        "id":"6",
+        "question":"Which is the right way of declaring a variable in PHP?",
+        "options":[
+            "$3hello", 
+            "$_hello", 
+            "$this",
+            "$5_Hello"
+            ],
+        "ans":"1",
+        "ans_desc":"$_hello"
+    },
+    {
+        "id":"7",
+        "question":"Which of the following is used for concatenation in PHP?",
+        "options":[
+            "+ (plus)", 
+            "* (Asterisk)", 
+            ". (dot)",
+            "append()"
+            ],
+        "ans":"2",
+        "ans_desc":". (dot)"
+ 
+    },
+    {
+        "id":"8",
+        "question":"How to define a function in PHP?",
+        "options":[
+            "functionName(parameters) {function body}", 
+            "function {function body}", 
+            "function functionName(parameters) {function body}",
+            "data type functionName(parameters) {function body}"
+            ],
+        "ans":"2",
+        "ans_desc":"function functionName(parameters) {function body}"        
+    },
+    {
+        "id":"9",
+        "question":"Which of the following is the use of strlen() function in PHP? ",
+        "options":[
+            "The strlen() function returns the type of string", 
+            "The strlen() function returns the length of string",
+            "The strlen() function returns the value of string",
+            "The strlen() function returns both value and type of string"
+            ],
+        "ans":"1",
+        "ans_desc":"The strlen() function returns the length of string"        
+    },
+    {
+        "id":"10",
+        "question":"Which of the following is the correct use of the strcmp() function in PHP?",
+        "options":[
+            "The strcmp() function is used to compare the strings excluding case", 
+            "The strcmp() function is used to compare the uppercase strings",
+            "The strcmp() function is used to compare the lowercase strings",
+            "The strcmp() function is used to compare the strings including case"
+            ],
+        "ans":"3",
+        "ans_desc":"The strcmp() function is used to compare the strings including case"        
+    },
+    {
+        "id":"11",
+        "question":"Which of the following function displays the information about PHP and its configuration?",
+        "options":[
+            "php_info()", 
+            "phpinfo() ",
+            "info()",
+            "None of the above"
+            ],
+        "ans":"1",
+        "ans_desc":"phpinfo()"        
+    },
+    {
+        "id":"12",
+        "question":"Which of the following starts with __ (double underscore) in PHP?",
+        "options":[
+            "Inbuilt constants", 
+            "User-defined constants",
+            "Magic constants",
+            "Default constants"
+            ],
+        "ans":"2",
+        "ans_desc":"Magic constants"        
+    },
+    {
+        "id":"13",
+        "question":"What will be the output of the following PHP code?",
+        "options":[
+            "no output", 
+            "Welcome to Sanfoundry",
+            "1000 PHP MCQ",
+            "error"
+            ],
+        "ans":"2",
+        "code":"<?php\n$x = 10;,$y = 20;\nif ($x > $y && 1||1)\n print '1000 PHP MCQ'\nelse\n print 'Welcome to Sanfoundry';\n?>",
+        "ans_desc":"1000 PHP MCQ"
+
+        
+    },
+    {
+        "id":"14",
+        "question":"What will be the output of the following PHP program?",
+        "options":[
+            "6", 
+            "5",
+            "4",
+            "3"
+            ],
+        "ans":"0",
+        "code":"<?php\n$fruits = array ('apple', 'orange', array ('pear', 'mango'),'banana');\necho (count($fruits, 1));\n?>",
+        "ans_desc":"6"
+        
+    },
+    {
+        "id":"15",
+        "question":"What will be the output of the following PHP program?",
+        "options":[
+            "Correct Answer", 
+            "Is The",
+            "I Wonder",
+            "Which One"
+            ],
+        "ans":"3",
+        "code":"<?php \n function multi($num)\n{\nif ($num == 3)\n echo 'I Wonder';\nif ($num == 7)\n echo 'Which One';\nif ($num == 8)\n echo 'Is The';\nif ($num == 19)\n echo 'Correct Answer';\n}\n$can = stripos('I love php, I love php too!','PHP');\nmulti($can);\n?>",
+        "ans_desc":"Which One"
+        
+    },
+    {
+        "id":"16",
+        "question":"In the following PHP program, what is/are the properties?",
+        "options":[
+            "function sample()", 
+            "echo 'This is an example' ;",
+            "public $name;",
+            "class Example"
+            ],
+        "ans":"2",
+        "code":"<?php\n class Example\n{\n  public $name;\n  function Sample()\n  {\n  echo 'Learn PHP @ Sanfoundry';\n  }\n}\n?>",        
+        "ans_desc":"public $name;"
+    },
+    {
+        "id":"17",
+        "question":"PHP recognizes constructors by the name ________",
+        "options":[
+            "function __construct()", 
+            "function _construct()",
+            "classname()",
+            "_construct() "
+            ],
+        "ans":"0",
+        "ans_desc":"function __construct()"
+        
+    },
+    {
+        "id":"18",
+        "question":"What will be the value of the variable $input in the following PHP program?",
+        "options":[
+            "PHP stands for Hypertext <i>Preprocessor</i>!", 
+            "PHP stands for Hypertext Preprocessor!",
+            "PHP <td>stands for</td> Hypertext <i>Preprocessor</i>!",
+            "PHP <td>stands for</td> Hypertext Preprocessor!"
+            ],
+        "ans":"0",
+        "code":"<?php\n$input = 'PHP<td>stands for</td>Hypertext<i>Preprocessor</i>!';\n$input = strip_tags($input,'<i></i>');\necho $input;\n?>",
+        "ans_desc":"PHP stands for Hypertext <i>Preprocessor</i>!"
+
+        
+    },
+    {
+        "id":"19",
+        "question":"Which of the looping statements is/are supported by PHP?",
+        "options":[
+            "for loop", 
+            "while loop",
+            "do-while loop",
+            "foreach loop",
+            "All above"
+            ],
+        "ans":"4",
+        "ans_desc":"All above"
+        
+    },
+    {
+        "id":"20",
+        "question":"Which variable is used to collect form data sent with both the GET and POST methods?",
+        "options":[
+            "$_BOTH", 
+            "$REQUEST",
+            "$_REQUEST",
+            "$BOTH"
+            ],
+        "ans":"2",
+        "ans_desc":"$_REQUEST"
+        
+    },
+    {
+        "id":"21",
+        "question":"Which of the following function is used to set cookie in PHP?",
+        "options":[
+            "createcookie()", 
+            "makecookie()",
+            "setcookie()",
+            "None of the above"
+            ],
+        "ans":"2",
+        "ans_desc":"setcookie() "
+        
+    },
+    {
+        "id":"22",
+        "question":"Which of the following function is used to sort an array in descending order?",
+        "options":[
+            "sort()", 
+            "asrot()",
+            "dsort()",
+            "rsort()"
+            ],
+        "ans":"3",
+        "ans_desc":"rsort()"
+        
+    },
+    {
+        "id":"23",
+        "question":"Which of the following is the correct way to create an array in PHP?",
+        "options":[
+            "$season = array['summer' , 'winter' , 'spring' , 'autumn'];", 
+            "$season = array('summer' , 'winter' , 'spring' , 'autumn');",
+            "$season = 'summer' , 'winter' , 'spring' , 'autumn';",
+            "All of the above"
+            ],
+        "ans":"1",
+        "ans_desc":"$season = array('summer' , 'winter' , 'spring' , 'autumn');"
+        
+    },
+    {
+        "id":"24",
+        "question":"The function in PHP that can be used to concatenate array elements to form a single delimited string is –",
+        "options":[
+            "implode()", 
+            "concat()",
+            "explode()",
+            "concatenate()"
+            ],
+        "ans":"0",
+        "ans_desc":"implode()"
+        
+    },
+    {
+        "id":"25",
+        "question":"Which one of the following function is used to start a session?",
+        "options":[
+            "start_session()", 
+            "session_start()",
+            "session_begin()",
+            "begin_session()"
+            ],
+        "ans":"1",
+        "ans_desc":"session_start()"
+        
+    }
+
+    
+
+]

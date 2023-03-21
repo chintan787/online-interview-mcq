@@ -1,0 +1,207 @@
+[
+    {
+        "id":"1",
+        "question":"What is CSS?",
+        "options":[
+            "CSS is a style sheet language",
+            "CSS is designed to separate the presentation and content, including layout, colors, and fonts",
+            "CSS is the language used to style the HTML documents",
+            "All of the mentioned"
+        ],
+        "ans":"3",
+        "ans_desc":"All of the mentioned"
+    },
+    {
+        "id":"2",
+        "question":"Which of the following tag is used to embed CSS in html page?",
+        "options":[
+            "<css>",
+            "<!DOCTYPE html>",
+            "<script>",
+            "<style>"
+        ],
+        "ans":"3",
+        "ans_desc":"<style>"
+
+    },
+    {
+        "id":"3",
+        "question":"Which of the following CSS selectors are used to specify a group of elements?",
+        "options":[
+            "tag",
+            "id",
+            "class",
+            "both class and tag"
+        ],
+        "ans":"2",
+        "ans_desc":"class"
+
+    },
+    {
+        "id":"4",
+        "question":"Which of the following CSS framework is used to create a responsive design?",
+        "options":[
+            "django",
+            "rails",
+            "larawell",
+            "bootstrap"
+        ],
+        "ans":"3",
+        "ans_desc":"bootstrap"
+
+    },
+    {
+        "id":"5",
+        "question":"Which of the following CSS selector is used to specify a rule to bind a particular unique element?",
+        "options":[
+            "tag", 
+            "id", 
+            "class",
+            "both class and tag"
+            ],
+        "ans":"1",
+        "ans_desc":"id"
+
+        
+    },
+    {
+        "id":"6",
+        "question":"Which of the following type of HTML tag is used to define an internal style sheet?",
+        "options":["<script>", "<link>", "<class>", "<style>"],
+        "ans":"3",
+        "ans_desc":"<style>"
+
+        
+    },
+    {
+        "id":"7",
+        "question":"Which of the following CSS property is used to make the text bold?",
+        "options":[
+            "text-decoration: bold", 
+            "font-weight: bold", 
+            "font-style: bold",
+            "text-align: bold"
+            ],
+        "ans":"1",
+        "ans_desc":"font-weight: bold"
+
+        
+    },
+    {
+        "id":"8",
+        "question":"Which of the following CSS style property is used to specify an italic text?",
+        "options":[
+            "style", 
+            "font", 
+            "font-style",
+            "@font-face"
+            ],
+        "ans":"2",
+        "ans_desc":"font-style"
+
+        
+    },
+    {
+        "id":"9",
+        "question":"What will be the output of following CSS code snippet?",
+        "options":[
+            "color: red, text-decoration: underline works", 
+            "only font-style: italic works", 
+            "color: red, text-decoration: underline and font-style: italic all works",
+            "text-decoration: underline and font-style: italic works"
+            ],
+        "ans":"1",
+        "code":"h1 {color: red text-decoration: underline; font-style: italic;}",
+        "ans_desc":"only font-style: italic works"
+
+        
+    },
+    {
+        "id":"10",
+        "question":"Which of the following are the CSS Extension Prefixes for Webkit?",
+        "options":[
+            "-chrome", 
+            "-web", 
+            "-o-",
+            "-webkit"
+            ],
+        "ans":"3",
+        "ans_desc":"-webkit"
+
+        
+    },
+    {
+        "id":"11",
+        "question":"Which of the following is the correct syntax to link an external style sheet in the HTML file?",
+        "options":[
+            "<link rel=”stylesheet” href=”style.css” />", 
+            "<link rel=”stylesheet” src=”style.css” />", 
+            "<style rel=”stylesheet” src=”style.css” />",
+            "<style rel=”stylesheet” link=”style.css” />"
+            ],
+        "ans":"0",
+        "ans_desc":"<link rel=”stylesheet” href=”style.css” />"
+
+        
+    },
+    {
+        "id":"12",
+        "question":"Which of the following CSS property can be used to set the image as a border instead of the border style?",
+        "options":[
+            "background-image-source", 
+            "background-image", 
+            "border-image-source",
+            "border-image"
+            ],
+        "ans":"2",
+        "ans_desc":"border-image-source"
+
+        
+    },
+    {
+        "id":"13",
+        "question":"Which of the following CSS property defines the different properties of all four sides of an element's border in a single declaration?",
+        "options":[
+            "border-collapse", 
+            "border-width", 
+            "padding",
+            "border"
+            ],
+        "ans":"1",
+        "ans_desc":"border-width"
+
+        
+    },
+    {
+        "id":"14",
+        "question":"Which of the following CSS selector selects the elements that are checked?",
+        "options":[
+            ":checked", 
+            "E ~ F", 
+            "::after",
+            "none of the mentioned"
+            ],
+        "ans":"0",
+        "ans_desc":":checked"
+
+        
+    },
+    {
+        "id":"15",
+        "question":"Which of the following values are accepted by the float Property?",
+        "options":[
+            "left", 
+            "right", 
+            "none",
+            "all of the mentioned"
+            ],
+        "ans":"3",
+        "ans_desc":"all of the mentioned"
+
+        
+    }
+   
+
+    
+
+]

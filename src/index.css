@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+code {
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; */
+    font-family: 'Roboto', sans-serif;
+}
+
+.MuiTypography-root,
+.MuiFormControlLabel-root,
+.MuiButtonBase-root ,
+.MuiInputBase-root.MuiOutlinedInput-root,
+input,
+.MuiOutlinedInput-notchedOutline{
+  font-family: 'Roboto', sans-serif !important;
+
+}
+
+.k-pdf-export .extraSpace{
+ height: 25px !important; 
+}
+.k-pdf-export .submitbtn{
+  /* display: none !important; */
+  visibility: hidden !important;
+  padding:20px !important;
+}
+.k-pdf-export .questionSection{
+  padding-top: 0 !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 20px !important;
+}
+ .k-pdf-export .fixed{
+  position: relative !important;
+  /* height: 50px !important; */
+} 
+
+/* .k-pdf-export .quizHeader{
+  height: 50px !important;
+} */
+.k-pdf-export .questionSection.MuiBox-root{
+  top:0 !important;
+}
+
+.k-pdf-export .timezone ,
+.k-pdf-export  .timezone-mobile,
+.k-pdf-export  .timezone-desktop {
+  display: none !important;
+}
+/* .k-pdf-export .userInfo,
+.k-pdf-export .countMarks{ */
+  /* display: block !important; */
+/* } */
+
+
+.k-pdf-export .userInfo{
+  order:2 !important;
+}
+.k-pdf-export .countMarks{
+  order:0 !important;
+  display: block !important;
+}
+.k-pdf-export .resultSection{
+  display: block !important;
+}
+@media(max-width:600px){
+  .k-pdf-export .resultSection-mobile{
+    display: block !important;
+  }
+  .k-pdf-export .resultSection{
+    display: none !important;
+  }
+  .k-pdf-export .userInfo-desktop{
+    display: block !important;
+  }
+}
+
+.k-pdf-export .warningMSG{
+  display: none !important;
+} 
+.k-pdf-export .form{
+margin: 40px;
+}
+
+/* .k-pdf-export .fixed .MuiContainer-root{
+padding-left: 0 !important;
+padding-right: 0 !important;
+} */
+
+.k-pdf-export .questionHeaderSection{
+  justify-content: space-between !important;
+}
+.k-pdf-export .doneIcon{
+  display: block !important;
+  fill:#0f0 !important;
+  /* color:#00FF00 !important; */
+  /* background-color: #00FF00; */
+}
+.doneIcon{
+  display:none;
+}
+
+
+
+/* .k-pdf-export .question{
+font-size: 14px !important;
+margin-bottom: 0px !important;
+}
+.k-pdf-export .allOptions span{
+  font-size: 12px !important;
+}
+.k-pdf-export .allOptions span.MuiButtonBase-root.MuiRadio-root{
+  padding: 4px !important;
+
+}
+.k-pdf-export .allOptions span svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
+  font-size: 14px !important;
+}
+.k-pdf-export .questionContainer{
+  margin-top: 10px !important;
+
+} */

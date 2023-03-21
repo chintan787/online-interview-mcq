@@ -1,0 +1,207 @@
+[
+    {
+        "id":"1",
+        "question":"Which of the following is generally used for performing tasks like creating the structure of the relations, deleting relation?",
+        "options":[
+            "DML(Data Manipulation Language)",
+            "Query",
+            "Relational Schema",
+            "DDL(Data Definition Language)"
+        ],
+        "ans":"3",
+        "ans_desc":"DDL(Data Definition Language)"
+    },
+    {
+        "id":"2",
+        "question":"Which of the following provides the ability to query information from the database and insert tuples into, delete tuples from, and modify tuples in the database?",
+        "options":[
+            "DML(Data Manipulation Language)",
+            "DDL(Data Definition Language)",
+            "Query",
+            "Relational Schema"
+        ],
+        "ans":"0",
+        "ans_desc":"DML(Data Manipulation Language)"
+
+    },
+    {
+        "id":"3",
+        "question":"The given Query can also be replaced with_______:",
+        "options":[
+            "Select name, course_id from teaches, instructor where instructor_id=course_id;",
+            "Select name, course_id from instructor natural join teaches;",
+            "Select name, course_id from instructor;",
+            "Select course_id from instructor join teaches; "
+        ],
+        "ans":"1",
+        "code":"SELECT name, course_id\nFROM instructor, teaches\nWHERE instructor_ID= teaches_ID;",
+        "ans_desc":"Select name, course_id from instructor natural join teaches;"
+
+    },
+    {
+        "id":"4",
+        "question":"Which one of the following given statements possibly contains the error?",
+        "options":[
+            "select * from emp where empid = 10003;",
+            "select empid from emp where empid = 10006;",
+            "select empid from emp;",
+            "select empid where empid = 1009 and Lastname = 'GELLER';"
+        ],
+        "ans":"3",
+        "ans_desc":"select empid where empid = 1009 and Lastname = 'GELLER';"
+
+    },
+    {
+        "id":"5",
+        "question":"What do you mean by one to many relationships?",
+        "options":[
+            "One class may have many teachers", 
+            "One teacher can have many classes", 
+            "Many classes may have many teachers ",
+            "Many teachers may have many classes"
+            ],
+        "ans":"1",
+        "ans_desc":"One teacher can have many classes"
+
+        
+    },
+    {
+        "id":"6",
+        "question":"Which of the following is not a DDL command?",
+        "options":["TRUNCATE", "ALTER", "CREATE", "UPDATE"],
+        "ans":"3",
+        "ans_desc":"UPDATE"
+
+        
+    },
+    {
+        "id":"7",
+        "question":"Which statement is used to delete all rows in a table without having the action logged?",
+        "options":[
+            "DELETE", 
+            "REMOVE", 
+            "DROP",
+            "TRUNCATE"
+            ],
+        "ans":"3",
+        "ans_desc":"TRUNCATE"
+
+        
+    },
+    {
+        "id":"8",
+        "question":"How many Primary keys can have in a table?",
+        "options":[
+            "Only 1", 
+            "Only 2", 
+            "Depends on no of Columns",
+            "Depends on DBA"
+            ],
+        "ans":"0",
+        "ans_desc":"Only 1"
+
+        
+    },
+    {
+        "id":"9",
+        "question":"Which datatype can store unstructured data in a column?",
+        "options":[
+            "CHAR", 
+            "RAW", 
+            "NUMERIC",
+            "VARCHAR"
+            ],
+        "ans":"1",
+        "ans_desc":"RAW"
+
+        
+    },
+    {
+        "id":"10",
+        "question":"Which data manipulation command is used to combines the records from one or more tables?",
+        "options":[
+            "SELECT", 
+            "PROJECT", 
+            "JOIN",
+            "PRODUCT"
+            ],
+        "ans":"2",
+        "ans_desc":"JOIN"
+
+        
+    },
+    {
+        "id":"11",
+        "question":"If we have not specified ASC or DESC after a SQL ORDER BY clause, the following is used by default",
+        "options":[
+            "DESC", 
+            "ASC", 
+            "There is no default value",
+            "None of the mentioned"
+            ],
+        "ans":"1",
+        "ans_desc":"ASC"
+
+        
+    },
+    {
+        "id":"12",
+        "question":"Which one of the following command is used to delete the existing row in a table?",
+        "options":[
+            "Delete", 
+            "Update", 
+            "Insert",
+            "None of the above "
+            ],
+        "ans":"0",
+        "ans_desc":"Delete"
+
+        
+    },
+    {
+        "id":"13",
+        "question":"Which of the following keys is generally used to represents the relationships between the tables?",
+        "options":[
+            "Primary key", 
+            "Foreign key", 
+            "Secondary key",
+            "None of the above"
+            ],
+        "ans":"0",
+        "ans_desc":"Primary key"
+
+        
+    },
+    {
+        "id":"14",
+        "question":"Which one of the following keyword is used to find out the number of values in a column?",
+        "options":[
+            "TOTAL", 
+            "COUNT", 
+            "SUM",
+            "ADD"
+            ],
+        "ans":"1",
+        "ans_desc":"COUNT"
+
+        
+    },
+    {
+        "id":"15",
+        "question":" Which of the following statement is correct to display all the cities with the condition, temperature, and humidity whose humidity is in the range of 60 to 75 from the 'whether' table?",
+        "options":[
+            "SELECT * FROM weather WHERE humidity IN (60 to 75)", 
+            "SELECT * FROM weather WHERE humidity BETWEEN 60 AND 75", 
+            "SELECT * FROM weather WHERE humidity NOT IN (60 AND 75)",
+            "SELECT * FROM weather WHERE humidity NOT BETWEEN 60 AND 75 "
+            ],
+        "ans":"1",
+        "ans_desc":"SELECT * FROM weather WHERE humidity BETWEEN 60 AND 75"
+
+        
+    }
+   
+
+    
+
+]

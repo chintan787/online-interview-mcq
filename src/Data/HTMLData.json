@@ -1,0 +1,69 @@
+[
+    {
+        "id":"1",
+        "question":"There are ___ levels of heading in HTML",
+        "options":[
+            "Three",
+            "Four",
+            "Five",
+            "Six"
+        ],
+        "ans":"3"
+    },
+    {
+        "id":"2",
+        "question":"The purpose of markup is to",
+        "options":[
+            "add hypertext capabilities",
+            "enhance the document",
+            "both A & B",
+            "none of the above"
+        ],
+        "ans":"2"
+    },
+    {
+        "id":"3",
+        "question":"Which of the following tags do not require a terminator?",
+        "options":[
+            "<u>",
+            "<br>",
+            "<b>",
+            "None of the mentioned"
+        ],
+        "ans":"1"
+    },
+    {
+        "id":"4",
+        "question":"Arrays in JavaScript are defined by which of the following statements?",
+        "options":[
+            "It is an ordered list of values",
+            "It is an ordered list of objects",
+            "It is an ordered list of string",
+            "It is an ordered list of functions"
+        ],
+        "ans":"0"
+    },
+    {
+        "id":"5",
+        "question":"To get the ordered list we use",
+        "options":["<h1>", "<ul>", "<ol>", "<ml>"],
+        "ans":"2"
+        
+    },
+    {
+        "id":"6",
+        "question":"For a particular font its size attribute can be an absolute value ranging form",
+        "options":[
+            "1-10", 
+            "1-9", 
+            "1-8",
+            "1-7"
+            ],
+        "ans":"0"
+        
+    }
+   
+
+    
+
+]

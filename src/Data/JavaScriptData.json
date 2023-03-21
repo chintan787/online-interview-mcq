@@ -1,0 +1,230 @@
+[
+    {
+        "id":"1",
+        "question":"Which type of JavaScript language is ___",
+        "options":[
+            "Object-Oriented",
+            "Object-Based",
+            "Assembly-language",
+            "High-level"
+        ],
+        "ans":"1",
+        "ans_desc":"Object-Based"
+    },
+    {
+        "id":"2",
+        "question":"What will be the output of the following JavaScript code snippet?",
+        "options":[
+            "error",
+            "Sanfoundry_ Javascriptmcq",
+            "Undefined",
+            "Sanfoundry_Javascriptmcq"
+        ],
+        "ans":"3",
+        "code":"<p id='demo'></p>\nvar txt1 = 'Sanfoundry_';\nvar txt2 = 'Javascriptmcq';\ndocument.getElementById('demo').innerHTML = txt1 + txt2;",
+        "ans_desc":"Sanfoundry_Javascriptmcq"
+    },
+    {
+        "id":"3",
+        "question":"What will be the output of the following JavaScript code?",
+        "options":[
+            "10",
+            "50",
+            "5",
+            "Error"
+        ],
+        "ans":"1",
+        "code":"<p id='demo'></p>\n<script>\nvar js = 10;\njs *= 5;\ndocument.getElementById('demo').innerHTML = js;\n</script>",
+        "ans_desc":"50"
+    },
+    {
+        "id":"4",
+        "question":"Which one of the following also known as Conditional Expression:",
+        "options":[
+            "Alternative to if-else",
+            "Switch statement",
+            "If-then-else statement ",
+            "immediate if"
+        ],
+        "ans":"3",
+        "ans_desc":"immediate if"
+    },
+    {
+        "id":"5",
+        "question":"In JavaScript the x===y statement implies that:",
+        "options":[
+            "Both x and y are equal in value, type and reference address as well.",
+            "Both are x and y are equal in value only.",
+            "Both are equal in the value and data type.",
+            "Both are not same at all."],
+        "ans":"2",
+        "ans_desc":"Both are equal in the value and data type."
+        
+    },
+    {
+        "id":"6",
+        "question":"What will be the output of the following JavaScript code?",
+        "options":[
+            "false", 
+            "true", 
+            "compilation error",
+            "runtime error"
+            ],
+        "ans":"1",
+        "code":"// JavaScript Comparison Operators\nfunction compare()\n{\n  int num=2;\n  char b=2;\n  if(a==b)\n    return true;\n  else\n    return false;\n}",
+        "ans_desc":"true"
+       
+        
+            
+    },
+    {
+        "id":"7",
+        "question":"What will be the output of the following JavaScript code?",
+        "options":[
+            "1, 2, 3, 6, 7, 8", 
+            "123", 
+            "1,2,3",
+            "Error"
+            ],
+        "ans":"0",
+        "code":"var quiz=[1,2,3];\nvar js=[6,7,8];\nvar result=quiz.concat(js);\ndocument.writeln(result);",
+        "ans_desc":"1, 2, 3, 6, 7, 8"
+            
+    },
+    {
+        "id":"8",
+        "question":"Which of the operator is used to test if a particular property exists or not?",
+        "options":[
+            "in", 
+            "exit", 
+            "within",
+            "exists"
+            ],
+        "ans":"0",
+        "ans_desc":"in"
+            
+    },
+    {
+        "id":"9",
+        "question":"What will be the output of the following JavaScript code?",
+        "options":[
+            "123246", 
+            "246", 
+            "123123",
+            "Exception"
+            ],
+        "ans":"2",
+        "code":"var string1 = '123';\nvar intvalue = 123;\nalert( string1 + intvalue );",
+        "ans_desc":"123123"
+            
+    },
+    {
+        "id":"10",
+        "question":"Among the following, which one is a ternary operator?",
+        "options":[
+            "+",
+            ":",
+            "-",
+            "?:"
+        ],
+        "ans":"3",
+        "ans_desc":"?:"
+        
+    },
+    {
+        "id":"11",
+        "question":"Which of the following function of the String object returns the character in the string starting at the specified position via the specified number of characters?",
+        "options":[
+            "slice()",
+            "split()",
+            "substr()",
+            "search()"
+        ],
+        "ans":"2",
+        "ans_desc":"substr()"
+        
+    },
+    {
+        "id":"12",
+        "question":"Choose the correct snippet from the following to check if the variable 'a' is not equal the 'NULL':",
+        "options":[
+            "if(a!==null)",
+            "if (a!)",
+            "if(a!null)",
+            "if(a!=null)"],
+        "ans":"0",
+        "ans_desc":"if(a!==null)"
+        
+    },
+    {
+        "id":"13",
+        "question":"Which one of the following is not considered as 'statement' in the JavaScript?",
+        "options":[
+            "use strict",
+            "debugger",
+            "if",
+            "with"
+        ],
+        "ans":"0",
+        "ans_desc":"use strict"
+        
+    },
+    {
+        "id":"14",
+        "question":"Which of the following syntax can be used to write 'Hello World' in an alert box?",
+        "options":[
+            "alertBox('Hello World');",
+            "msgBox('Hello World');",
+            "alert('Hello World');",
+            "msg('Hello World');"
+        ],
+        "ans":"2",
+        "ans_desc":"alert('Hello World');"
+        
+    },
+    {
+        "id":"15",
+        "question":"Which one of the following keywords is used for defining the function in the JavaScript?",
+        "options":[
+            "Void",
+            "init",
+            "main",
+            "function"
+        ],
+        "ans":"3",
+        "ans_desc":"function"
+        
+    },
+    {
+        "id":"16",
+        "question":"In JavaScript, do the functions always return a value?",
+        "options":[
+            "Yes, functions always returns a value",
+            "No, it is not necessary",
+            "A number of functions return values by default",
+            "some functions do not return any value"
+        ],
+        "ans":"2",
+        "ans_desc":"A number of functions return values by default"
+        
+    },
+    {
+        "id":"17",
+        "question":"Which of the following is the correct JavaScript syntax to access the element using HTML code?",
+        "options":[
+            "getElement ('availablecourse').innerHTML = 'See the list of availablecourse';",
+            "getElementById ('availablecourse').innerHTML = 'See the list of availablecourse';",
+            "getId ('availablecourse') = 'See the list of availablecourse';",
+            "getElementById ('availablecourse').innerHTML = See the list of availablecourse;"
+        ],
+        "ans":"1",
+        "ans_desc":"getElementById ('availablecourse').innerHTML = 'See the list of availablecourse';"
+        
+    }
+
+
+   
+
+    
+
+]
