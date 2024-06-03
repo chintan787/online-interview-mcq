@@ -2,58 +2,56 @@ import { Box, TextField, Typography, Button, Alert, Container } from "@mui/mater
 import React, { useEffect, useState } from "react";
 import { styles } from "./FormStyle";
 import { useForm } from "react-hook-form";
-import { Link ,useNavigate } from "react-router-dom";
-import UserInfo from "../Dashboard/UserInfo";
+import { useNavigate } from "react-router-dom";
 
 
-export default function UserForm(props) {
+
+export default function Form() {
+
   const [credential, setCredential] = useState();
   const [isButtonClick, setButtonClick] = useState(false);
 
-
-const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
     handleSubmit,
-    watch,
   } = useForm();
 
+
   const handleUserCredential = (event) => {
-    const { value, name } = event.target;
+    // const { value, name } = event.target;
     // setCredential({ ...credential, [name]: value });
   };
 
   const onSubmit = (data) => {
-    // console.log("data",data);
     setButtonClick(true);
     setCredential(data);
-    
+
   };
 
-  useEffect(()=>{
-    if(isButtonClick){
-      localStorage.setItem('user',JSON.stringify(credential));
+  useEffect(() => {
+    if (isButtonClick) {
+      localStorage.setItem('user', JSON.stringify(credential));
       navigate('/dashboard');
     }
+  }, [isButtonClick])
 
-  },[isButtonClick])
+
 
 
   return (
-    
-      <Container>
 
-    <Box
-      sx={styles.formContainer}
-      autoComplete="off"
-    >
-      <Typography variant="h3" sx={styles.loginTitle}>
-        Login
-      </Typography>
+    <Container>
+      <Box
+        sx={styles.formContainer}
+        autoComplete="off"
+      >
+        <Typography variant="h3" sx={styles.loginTitle}>
+          Login
+        </Typography>
+        <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%", textAlign: "center" }}>
 
-      <form onSubmit={handleSubmit(onSubmit)} style={{width:"100%",textAlign:"center"}}>
-       
           <TextField
             name="user_name"
             id="user_name"
@@ -77,7 +75,7 @@ const navigate = useNavigate();
           )}
 
           <TextField
-           type="email"
+            type="email"
             name="user_email"
             id="user_email"
             fullWidth
@@ -110,25 +108,23 @@ const navigate = useNavigate();
             {...register("user_mobileNo", {
               required: "Mobile number is required",
               pattern: {
-                value:/^\d{10}$/,
+                value: /^\d{10}$/,
                 message: "Enter valid Mobile number",
               },
             })}
           />
-           {errors.user_mobileNo ? (
+          {errors.user_mobileNo ? (
             <Alert severity="error"> {errors.user_mobileNo?.message}</Alert>
           ) : (
             ""
           )}
 
-
-          <Button type="submit" sx={styles.formButton} variant="contained" /* onClick={e => (e.preventDefault())} */>
+          <Button type="submit" sx={styles.formButton} variant="contained" >
             Sign in
           </Button>
-        
-      </form>
-      
-    </Box>
+        </form>
+
+      </Box>
     </Container>
   )
 }

@@ -6,7 +6,9 @@ import DashboardPage from "./Pages/DashboardPage";
 import LanguagPage from "./Pages/LanguagPage";
 import LoginPage from "./Pages/LoginPage";
 import ResultPage from "./Pages/ResultPage";
-import TimerPage from "./Pages/TimerPage";
+import AdminDashboardPage from "./Pages/AdminDashboardPage";
+import QuestionPage from "./Pages/QuestionPage";
+import AdminPage from "./Pages/AdminPage";
 
 export default function Router() {
  
@@ -32,14 +34,14 @@ export default function Router() {
       <Routes>
       {/* isBack: {String(isBack)} */}
         <Route exact path="/" element={<LoginPage  />} />
+        <Route exact path="/admin" element={<AdminPage />} />
+        <Route exact path="/admin/dashboard" element={<AdminDashboardPage  isBack={isBack} />} />
+        <Route exact path="/admin/dashboard/:category_name" element={<QuestionPage  isBack={isBack} />} />
+
         <Route exact path="/dashboard" element={<DashboardPage isBack={isBack} />} />
         <Route exact path="/dashboard/:languagename" element={<LanguagPage  isBack={isBack} />} />
 
         <Route exact path="/dashboard/result" element={<ResultPage />} />
-        <Route exact path="/dashboard/timer" element={<TimerPage />} />
-
-
-
       </Routes>
 
       {/* <Box>

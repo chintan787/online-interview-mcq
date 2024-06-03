@@ -29,12 +29,12 @@
         "question":"Which of the following is the correct syntax to write a PHP code?",
         "options":[
             "<?php ?>",
-            "< php >",
             "< ? php ?>",
-            "<? ?>"
+            "<? ?>",
+            "A and C Both"
         ],
         "ans":"3",
-        "ans_desc":"<? ?>"
+        "ans_desc":"A and C Both"
 
     },
     {

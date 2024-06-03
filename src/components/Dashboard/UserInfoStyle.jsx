@@ -4,7 +4,16 @@ export const styles = {
         display:"flex",
         flexDirection:"column",
         alignItems:"center",
-        justifyContent:"center"
+        justifyContent:"center",
+        width:{
+          xs:"auto",
+          sm:"550px"
+        },
+        // maxWidth: "500px",
+        margin:{
+          xs:"0 15px",
+          sm:"0 auto"
+        },
     },
   userInfoSection: {
     // padding: 3,

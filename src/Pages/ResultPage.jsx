@@ -5,8 +5,7 @@ import data from '../Data/PHPData.json'
 export default function ResultPage() {
   
   const totalCount = localStorage.getItem("total");
-  // console.log("userAsObjectAgain",userAsObjectAgain);
-  console.log("data",data)
+ 
 
   return (
     <Container>

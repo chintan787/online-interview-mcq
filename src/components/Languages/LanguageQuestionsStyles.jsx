@@ -79,7 +79,7 @@ export const styles = {
    
   },
   question: {
-    fontSize: "18px",
+    fontSize:"18px",
     marginBottom: 1,
   },
   options: {
@@ -140,7 +140,7 @@ export const styles = {
 
   },
   countMarks: {
-    fontSize: "20px",
+    fontSize: {xs:"15px",md:"20px"},
     margin:{
       xs:"0",
       md:"10px 0"
@@ -159,11 +159,11 @@ export const styles = {
     alignItems: "center",
     justifyContent:{
       xs:"center",
+      sm:"space-between",
       md:"space-between"
     }
   },
   testName:{
-   
     order:1
   },
   userInfo:{
@@ -235,8 +235,7 @@ export const styles = {
 userName:{
   fontSize:{
     xs:"12px",
-    sm:"16px",
-    lg:"16px",
+    md:"16px",
     // xl:"18px",
   },
   textTransform: "capitalize"
@@ -244,14 +243,15 @@ userName:{
 userEmail:{
   fontSize:{
     xs:"12px",
-    sm:"16px",
-    lg:"16px",
+    md:"16px",
     // xl:"18px",
 
   },
 },
 testTitle:{
-  fontSize:'30px',
+  fontSize:{
+    xs:'20px',
+    md:'30px'},
   // {
   //   xs:"30px",
   //   sm:"40px",

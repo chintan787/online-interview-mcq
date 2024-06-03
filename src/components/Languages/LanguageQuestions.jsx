@@ -2,76 +2,38 @@ import {
   Box,
   Typography,
   FormControl,
-  FormLabel,
   FormControlLabel,
   RadioGroup,
   Radio,
   Button,
   Container,
-  Divider,
   CircularProgress
 
 } from "@mui/material";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { styles } from "./LanguageQuestionsStyles";
-import { useTimer } from "react-timer-hook";
-import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
+import { PDFExport } from "@progress/kendo-react-pdf";
 import { drawDOM, exportPDF } from "@progress/kendo-drawing";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import RightIcon from "./RightIcon";
-import { Co2Sharp, ConstructionOutlined } from "@mui/icons-material";
-// import MyTimer from "./MyTimer";
-
-
-function MyTimer({ expiryTimestamp,callbtton}) {
-
-  const {
-    seconds,
-    minutes,
-    isRunning,
-  } = useTimer({ expiryTimestamp, onExpire: () => { console.warn('onExpire called'); callbtton();} });
-
-
-  return (
-    
-
-<Box sx={styles.timerSection} className="timezone">
-     <Typography sx={styles.timeLeft} variant="h6">
-         Time Left :{" "}
-       </Typography>
-       <Typography sx={styles.timeDetails}>
-         {minutes.toLocaleString("en-US", {
-          minimumIntegerDigits: 2,
-          useGrouping: false,
-        })}
-      </Typography>
-      <Typography sx={styles.timeDetails}>:</Typography>
-      <Typography sx={styles.timeDetails}>
-        {seconds.toLocaleString("en-US", {
-          minimumIntegerDigits: 2,
-          useGrouping: false,
-        })}
-      </Typography>
-   </Box>
-  );
-}
-
- 
-
-
+import { v4 as uuidv4 } from 'uuid';
+import Timer from "./Timer";
+import { sendMail } from "../../Action/Data";
+import { useSelector, useDispatch } from 'react-redux';
+import { ConstructionOutlined } from "@mui/icons-material";
 
 export default function LanguageQuestions(props) {
+
   const [ansValue, setValue] = useState();
   const [submitBtnclick, setSubmitBtnClick] = useState(false);
   const [totalMarks, setTotalMarks] = useState(0);
   const [scrollY, setScrollY] = useState(0);
-  const [timeZone, setTimeZone] = useState();
   const [finishStatus, setfinishStatus] = useState(false);
   const [saveAsPDF, setSaveAsPDF] = useState();
   const [loading, setLoading] = useState(false);
+  const [saved, setSaved] = useState();
 
-  const [timeExpire , setTimeExpire] = useState(0);
 
   const data = props.data;
   const navigate = useNavigate();
@@ -80,6 +42,11 @@ export default function LanguageQuestions(props) {
   const location = useLocation();
   const stringifiedUser = localStorage.getItem("user");
   const userAsObjectAgain = JSON.parse(stringifiedUser);
+
+  const dispatch = useDispatch();
+  const sendMaildata = useSelector(
+    (state) => state.SendMailReducer?.mail
+  );
 
   //onclick get answers
   const handleChange = (event) => {
@@ -92,37 +59,31 @@ export default function LanguageQuestions(props) {
     event.preventDefault();
   };
 
-  // console.log("ansValue",ansValue)
-
 
   //Click submit button
   const handleAllAns = () => {
-    
     setLoading(true);
     setSubmitBtnClick(true);
     const ans = data && data.map((i) => i.ans);
     const options = data && data.map((i, index) => i.options);
-
-    
-
     // check correct Answer
     for (let i = 0; i < options.length; i++) {
       const checkansloop = options[i];
       const firstansloop = ans[i];
-
-      console.log("ansValue",ansValue)
       if (ansValue !== undefined) {
         if (checkansloop[firstansloop] === ansValue[i]) {
           count++;
-          setTotalMarks(count);
+          // setTotalMarks(count);
         }
       }
     }
+    setTotalMarks(count);
 
     // convert pdf
     setTimeout(() => {
       if (pdfExportComponent.current) {
         // const savePDF = pdfExportComponent.current;
+        // pdfExportComponent.current.save();
         let gridElement = document.querySelector(".form");
         drawDOM(gridElement, {
           paperSize: "auto",
@@ -134,41 +95,38 @@ export default function LanguageQuestions(props) {
             setSaveAsPDF(dataUri.split(";base64,")[1]);
           });
       }
-    }, [1500]);
+    }, [1500]); //1500
   };
 
-  //send mail API
+
+  // send mail API
   useEffect(() => {
     if (saveAsPDF !== undefined) {
-      const subjectName = props.subject +" of "+ props.languagename
+      const subjectName = props.subject + " of " + props.languagename;
+      const filename = props.languagename.toLowerCase() + ".pdf"
       const formData = new FormData();
-      formData.append("attachment", saveAsPDF);
-      formData.append("form", userAsObjectAgain.user_email);
+      formData.append("form", userAsObjectAgain?.user_email);
       formData.append("to", props.to);
       formData.append("subject", subjectName);
-      formData.append("message", props.message);
-      fetch("http://13.127.187.65:3009/attachment/add/", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => response.json())
-        .then((result) => {
-          // console.log("result",result.data)
-          setLoading(false);
-          let name = props.languagename;
-          navigate("/dashboard", {
-            state: { id: 1, name: `${props.languagename} test completed` },
-          });
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-          
+      formData.append("filename", filename);
+      // formData.append("message", props.message);
+      formData.append("attachment", saveAsPDF);
+      dispatch(sendMail(formData));
+  
     }
   }, [saveAsPDF]);
 
- 
 
+  useEffect(() => {
+    if (sendMaildata.status === 200) {
+      if (submitBtnclick) {
+        navigate("/dashboard", {
+          state: { id: 1, name: `${props?.languagename.toLowerCase()} test completed` },
+        });
+        setSubmitBtnClick(false)
+      }
+    }
+  }, [sendMaildata])
 
   //Stickty Header scrollTop
   function logit() {
@@ -206,25 +164,26 @@ export default function LanguageQuestions(props) {
     };
   }, []);
 
-  const timerNew = new Date();
-  timerNew.setSeconds(timerNew.getSeconds() + 600); // 10 minutes timer
-  // console.log("time",timerNew)
+
+
+  useEffect(() => {
+    const ans = localStorage.getItem("key");
+    setSaved(ans)
+  }, [])
+
 
   return (
     <>
       <Box sx={styles.allQuestionSection}>
         <PDFExport
           ref={pdfExportComponent}
-          // paperSize="auto"
-          // margin={20}
-          // fileName={`${props.languagename}`}
-          // author="Team"
         >
           <form
             action="http://localhost:3001/post"
             method="POST"
             id="form"
-            className="form"
+            className="form form-mobile"
+           
           >
             <Box sx={styles.quizHeader} className="fixed">
               <Container>
@@ -234,7 +193,7 @@ export default function LanguageQuestions(props) {
                 >
                   <Box sx={[styles.resultSection]} className="resultSection">
                     <Typography sx={styles.countMarks} className="countMarks">
-                      Total : {totalMarks}/{data.length}{" "}
+                      Total : {totalMarks}/{data?.length}{" "}
                     </Typography>
                   </Box>
 
@@ -247,22 +206,14 @@ export default function LanguageQuestions(props) {
                     </Typography>
 
                     <Box sx={styles.testTimeSection} className="timezone-mobile">
-                    <MyTimer expiryTimestamp={timerNew} callbtton={handleAllAns} />
+                      {saved === "mobile" ?
+                        props?.timeLimit && (
+                          <Timer limit={props?.timeLimit / 60} handleAllAns={handleAllAns} />
+                        )
+                         : ""} 
                     </Box>
-                   
-                    {/* <Box sx={styles.userInfo} className="userInfo userInfo-mobile">
-                    <Typography sx={styles.userName}>
-                      Name : {userAsObjectAgain.user_name}
-                    </Typography>
-                    <Typography sx={styles.userEmail}>
-                      Email : {userAsObjectAgain.user_email}
-                    </Typography>
-                  </Box>
 
-                  <Box sx={styles.testTimeSection} className="timezone-mobile">
-                    <MyTimer expiryTimestamp={timeZone} />
-                    </Box> */}
-                    
+
                   </Box>
 
                   <Box sx={styles.userInfo} className="userInfo userInfo-desktop">
@@ -277,15 +228,19 @@ export default function LanguageQuestions(props) {
                     </Typography>
 
                     <Box sx={[styles.resultSection]} className="resultSection-mobile">
-                    <Typography sx={styles.countMarks} className="countMarks">
-                      Total : {totalMarks}/{data.length}{" "}
-                    </Typography>
-                  </Box>
+                      <Typography sx={styles.countMarks} className="countMarks">
+                        Total : {totalMarks}/{data?.length}{" "}
+                      </Typography>
+                    </Box>
 
                   </Box>
 
                   <Box sx={styles.testTimeSection} className="timezone-desktop">
-                    <MyTimer expiryTimestamp={timerNew} callbtton={handleAllAns} />
+                    {saved === "desktop" ?
+                      props?.timeLimit && (
+                        <Timer limit={props?.timeLimit / 60} handleAllAns={handleAllAns} />
+                      )
+                       : ""} 
                   </Box>
 
                 </Box>
@@ -297,10 +252,10 @@ export default function LanguageQuestions(props) {
                 sx={[styles.allQuestions, { marginBottom: 2 }]}
                 className="questionSection"
               >
-                {data &&
+                {data ?
                   data.length > 0 &&
                   data.map((i, index) => (
-                    <>
+                    <Box key={index}>
                       <Box
                         key={i.id}
                         sx={styles.questionContainer}
@@ -311,11 +266,14 @@ export default function LanguageQuestions(props) {
                         </Typography>
 
                         {i.code ? (
+                          <Box className="code">
                           <SyntaxHighlighter
                             language={props.languagename.toLowerCase()}
+                           
                           >
                             {i.code.replaceAll("\n", "\n")}
                           </SyntaxHighlighter>
+                          </Box>
                         ) : (
                           ""
                         )}
@@ -335,6 +293,8 @@ export default function LanguageQuestions(props) {
                             {i.options.map((option, ind) => (
                               <FormControlLabel
                                 value={option}
+                                key={ind + uuidv4()}
+                                // id={uuidv4()}
                                 control={<Radio />}
                                 label={[
                                   option,
@@ -345,27 +305,29 @@ export default function LanguageQuestions(props) {
                                   ),
 
                                 ]}
-                                key={`index ${ind} ${index}`}
-                                sx={[styles.options,{textTransform:option === "Undefined" ? "lowercase" : ""}]}
+                                // key={`index ${ind} ${index}`}
+                                sx={[styles.options, { textTransform: option === "Undefined" ? "lowercase" : "" }]}
                                 className={`allOptions ${ind} index ${ind} ${index}`}
                               />
                             ))}
                           </RadioGroup>
                         </FormControl>
                       </Box>
-                    </>
-                  ))}
-                {/* <Box sx={{ height: "50px" }} className="extraSpace"></Box> */}
+                    </Box>
+                  ))
+                  :
+                  <Typography sx={{ textAlign: 'center', padding: 10 }}>No Data Found</Typography>
+                }
 
                 <Button
-                  sx={[styles.submitButton,{color:loading ? "transparent" : "#fff"}]}
+                  sx={[styles.submitButton, { color: loading ? "transparent" : "#fff" }]}
                   disabled={loading ? true : false}
                   variant="contained"
                   className="submitbtn"
                   onClick={handleAllAns}
                 >
                   submit
-                  {loading ?  <CircularProgress size={20} sx={styles.showLoader} /> : " "}
+                  {loading ? <CircularProgress size={20} sx={styles.showLoader} /> : " "}
                 </Button>
 
                 <Box id="result" sx={styles.divier}></Box>

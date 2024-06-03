@@ -167,10 +167,8 @@
             "Secondary key",
             "None of the above"
             ],
-        "ans":"0",
-        "ans_desc":"Primary key"
-
-        
+        "ans":"1",
+        "ans_desc":"Foreign key"
     },
     {
         "id":"14",

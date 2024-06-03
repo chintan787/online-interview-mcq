@@ -72,12 +72,12 @@ input,
   display: block !important;
 }
 @media(max-width:600px){
-  .k-pdf-export .resultSection-mobile{
+  /* .k-pdf-export .resultSection-mobile{
     display: block !important;
   }
   .k-pdf-export .resultSection{
     display: none !important;
-  }
+  } */
   .k-pdf-export .userInfo-desktop{
     display: block !important;
   }
@@ -108,23 +108,23 @@ padding-right: 0 !important;
   display:none;
 }
 
+@media only screen and (max-width: 768px) {
 
-
-/* .k-pdf-export .question{
-font-size: 14px !important;
-margin-bottom: 0px !important;
+  .k-pdf-export .fixed{ 
+    width:950px;
+  }
+  .k-pdf-export .form{
+    width:950px;
+    }
+    .form{
+      /* max-width: 950px; */
+      /* width:950px; */
+    }
+    .k-pdf-export.form-mobile{
+      width:1100px;
+    }
+    
 }
-.k-pdf-export .allOptions span{
-  font-size: 12px !important;
-}
-.k-pdf-export .allOptions span.MuiButtonBase-root.MuiRadio-root{
-  padding: 4px !important;
-
-}
-.k-pdf-export .allOptions span svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
-  font-size: 14px !important;
-}
-.k-pdf-export .questionContainer{
-  margin-top: 10px !important;
-
-} */
+/* .k-pdf-export .form{
+  width:950px
+  } */
